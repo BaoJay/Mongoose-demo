@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+
+// Use try-catch for Promise
 mongoose
   .connect("mongodb://localhost:27017/moviesApp")
   .then(() => {
