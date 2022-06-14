@@ -1,12 +1,13 @@
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/moviesApp");
-
-main().catch((err) => console.log(err));
-
-async function main() {
-  await mongoose.connect("mongodb://localhost:27017/moviesApp");
-  console.log("Successful!!!!");
-}
+mongoose
+  .connect("mongodb://localhost:27017/moviesApp")
+  .then(() => {
+    console.log("CONNECTION OPEN!!!!");
+  })
+  .catch((err) => {
+    console.log("Oh no error!!!!!");
+    console.log(err);
+  });
 
 // Defining a Schema (in Mongoose)
 const movieSchema = new mongoose.Schema({
